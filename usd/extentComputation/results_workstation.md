@@ -1,5 +1,6 @@
 #### Results from a typical VFX workstation
 
+- TBB Version 4.4
 - Run on (24 X 3500 MHz CPU s)
 - CPU Caches:
   - L1 Data 32K (x24)a
