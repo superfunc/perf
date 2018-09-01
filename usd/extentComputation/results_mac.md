@@ -1,15 +1,16 @@
-Results from my 2015 MBP
+### Results from my 2015 MBP
 
-2018-08-31 03:35:58
-Running ./build/bench
-Run on (4 X 2700 MHz CPU s)
-CPU Caches:
-  L1 Data 32K (x2)
-  L1 Instruction 32K (x2)
-  L2 Unified 262K (x2)
-  L3 Unified 3145K (x1)
+#### Machine Info
+- Run on (4 X 2700 MHz CPU s)
+- CPU Caches:
+  - L1 Data 32K (x2)
+  - L1 Instruction 32K (x2)
+  - L2 Unified 262K (x2)
+  - L3 Unified 3145K (x1)
 
-|Benchmark                                                 | Time              | CPU        | Iterations |
+##### Benchmark Results
+
+|Name                                                      | Time              | CPU        | Iterations |
 |:---------------------------------------------------------|:------------------|:-----------|:-----------|
 | ComputeExtent_NumPoints_1_GrainSize_1                    |       140 ns      |     139 ns |   4544038 | 
 | ComputeExtent_NumPoints_1_GrainSize_10                   |       136 ns      |     136 ns |   4749240 |
