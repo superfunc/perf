@@ -1,15 +1,15 @@
-Results from a typical VFX workstation (24 Core Xeon Box)
+#### Results from a typical VFX workstation
 
-2018-08-31 09:12:29
-Running ./build/bench
-Run on (24 X 3500 MHz CPU s)
-CPU Caches:
-  L1 Data 32K (x24)a
-  L1 Instruction 32K (x24)
-  L2 Unified 256K (x24)
-  L3 Unified 30720K (x2)
+- Run on (24 X 3500 MHz CPU s)
+- CPU Caches:
+  - L1 Data 32K (x24)a
+  - L1 Instruction 32K (x24)
+  - L2 Unified 256K (x24)
+  - L3 Unified 30720K (x2)
   
-|Benchmark                                               | Time          |  CPU          |Iterations| 
+#### Benchmark Results
+
+|Name                                                    | Time          |  CPU          |Iterations| 
 |:-------------------------------------------------------|:--------------|:--------------|:---------|
 | ComputeExtent_NumPoints_1_GrainSize_1                  |         80 ns |        80 ns  |  8764752 | 
 | ComputeExtent_NumPoints_1_GrainSize_10                 |         80 ns |        80 ns  |  8760656 |
