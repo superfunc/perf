@@ -9,7 +9,7 @@ by USD's rendering system, Hydra. The original code looked like this:
  {
     ...
     GfRange3d bbox;
-    for(const auto& points : points) {
+    for(const auto& point : points) {
         bbox.UnionWith(point);
     }
     ...
