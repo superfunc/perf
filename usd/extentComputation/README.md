@@ -1,3 +1,5 @@
+> Note: this post is a WIP
+
 This came up in some [code](https://github.com/PixarAnimationStudios/USD/pull/588/files#diff-ae871481ac1da2d3081de73c7245d8dd) 
 I found as a hotspot in a profile. The code was used for computing extents, which are in turn used for bounding box calculations
 by USD's rendering system, Hydra. The original code looked like this:
