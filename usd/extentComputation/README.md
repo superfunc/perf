@@ -47,14 +47,18 @@ So I sit down, back with the code I was originally profiling and.... it got slow
 head and go back to my co-worker that added the reduce function to ask what was wrong. "Did you set a grain size?"
 he asked. 
 
-> Many playing at home might be asking, well what the heck is a grain size. Grain size is TBB's terminology
-for _units of loop iterations per chunk_, and Chunk is TBB's terminology for _units of work to be done by a thread_.
+> Grain size is TBB's terminology for _units of loop iterations per chunk_, and Chunk is TBB's terminology for _units of work to be done by a thread_.
 
 "No", I sheepishly replied to his question. He says, "Try setting it to something like 10,000 and see what happens". I did, and sure
 as can be, the code got much faster than the original code. Busy with other tasks, I was content to leave this at 10,000, submit
 the PR and move on with life. A developer on the other side of the PR responded with two thoughts. First was surprise that the
 auto partitioner and TBB that controls chunking wasn't doing a great job. The second thought was that 10,000 might be too high.
+At this point, we agreed that we needed more data to make an informed decision (this whole incident was a good reminder to myself
+to always be data driven). 
 
+I go off and collect this data on both my 2015 MBP, and my 24-core Xeon workstation. In short, the numbers pointed to a grain size of 
+1 being awful, implying that the overhead of chunking was far greater than the work being done, and 10,000 being too high, implying that too much work was being done per chunk. Something in the range of 500-1k seemed like a good default, so thats where we left it
+for now.
 
 #### Results
 - [Macbook Pro](./charts_mac.pdf)
