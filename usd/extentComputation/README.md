@@ -1,9 +1,60 @@
 This came up in some [code](https://github.com/PixarAnimationStudios/USD/pull/588/files#diff-ae871481ac1da2d3081de73c7245d8dd) 
-I found as a hotspot in a profile. This gets into a pretty specific issue around Intel's TBB(Threading Building Blocks) library
-related to a feature called _grain size_. The default grain size used by the work library in [usd](github.com/pixaranimationstudios/usd)
-was set to **1**. After talking with a friend at work, I became suspicious of this number. Instead of relying on intuition,
-I profiled it! What is enclosed in this directory is the result of that profiling. I ran it on my workstation, a big 24 core Xeon box, and
-on my personal laptop, a 2015 MBP. 
+I found as a hotspot in a profile. The code was used for computing extents, which are in turn used for bounding box calculations
+by USD's rendering system, Hydra. The original code looked like this:
+
+```c++
+ bool
+ UsdGeomPointBased::ComputeExtent(const VtVec3fArray& points,
+     VtVec3fArray* extent)
+ {
+    ...
+    GfRange3d bbox;
+    TF_FOR_ALL(pointsItr, points) {
+        bbox.UnionWith(*pointsItr);
+    }
+    ...
+ }
+```
+
+Once I saw this code, it seemed obviously parallelizable via a [reduction](https://en.wikipedia.org/wiki/Fold_(higher-order_function)).
+Luckily, a co-worker of mine had [just added](https://github.com/PixarAnimationStudios/USD/blob/master/pxr/base/lib/work/reduce.h) a parallel function for reducing into USD's threading abstraction library. This code was a small wrapper around a function 
+called `parallel_reduce` from Intel's [TBB(Threading Building Blocks) library](https://software.intel.com/en-us/tbb-user-guide).
+So I go along, and rewrite this code to use the newly available `WorkParallelReduceN`:
+```c++
+ bool
+ UsdGeomPointBased::ComputeExtent(const VtVec3fArray& points,
+     VtVec3fArray* extent)
+ {
+    ...
+    GfRange3d bbox = WorkParallelReduceN(
+        GfRange3d(),
+        points.size(),
+        [&points](size_t b, size_t e, GfRange3d init){
+            for (auto i = b; i != e; ++i) {
+                init.UnionWith(points[i]);
+            }
+             return init;
+        },
+        [&points](GfRange3d lhs, GfRange3d rhs){
+            return GfRange3d::GetUnion(lhs, rhs);
+        }
+    );
+    ...
+}
+```
+
+So I sit down, back with the code I was originally profiling and.... it got slower. _Way slower_. So I scratch my
+head and go back to my co-worker that added the reduce function to ask what was wrong. "Did you set a grain size?"
+he asked. 
+
+> Many playing at home might be asking, well what the heck is a grain size. Grain size is TBB's terminology
+for _units of loop iterations per chunk_, and Chunk is TBB's terminology for _units of work to be done by a thread_.
+
+"No", I sheepishly replied to his question. He says, "Try setting it to something like 10,000 and see what happens". I did, and sure
+as can be, the code got much faster than the original code. Busy with other tasks, I was content to leave this at 10,000, submit
+the PR and move on with life. A developer on the other side of the PR responded with two thoughts. First was surprise that the
+auto partitioner and TBB that controls chunking wasn't doing a great job. The second thought was that 10,000 might be too high.
+
 
 #### Results
 - [Macbook Pro](./charts_mac.pdf)
