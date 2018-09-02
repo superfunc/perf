@@ -9,7 +9,7 @@
   - L2 Unified 262K (x2)
   - L3 Unified 3145K (x1)
 
-##### Benchmark Results
+##### Benchmark Results (Charts available [here](./charts_mac.pdf))
 
 | Benchmark                                        | Time           | CPU      | Iterations|
 |:-------------------------------------------------|:---------------|:---------|:-----------|
