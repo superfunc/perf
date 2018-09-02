@@ -4,3 +4,11 @@ related to a feature called _grain size_. The default grain size used by the wor
 was set to **1**. After talking with a friend at work, I became suspicious of this number. Instead of relying on intuition,
 I profiled it! What is enclosed in this directory is the result of that profiling. I ran it on my workstation, a big 24 core Xeon box, and
 on my personal laptop, a 2015 MBP. 
+
+#### Results
+- [Macbook Pro](./charts_mac.pdf)
+- [Xeon Workstation](./results_workstation.md)
+
+#### Further Reading
+- [TBB Parallel Reduce](https://software.intel.com/en-us/node/506063)
+- [TBB Controlled Chunking](https://software.intel.com/en-us/node/506060)
