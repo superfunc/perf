@@ -9,8 +9,8 @@ by USD's rendering system, Hydra. The original code looked like this:
  {
     ...
     GfRange3d bbox;
-    TF_FOR_ALL(pointsItr, points) {
-        bbox.UnionWith(*pointsItr);
+    for(const auto& points : points) {
+        bbox.UnionWith(point);
     }
     ...
  }
