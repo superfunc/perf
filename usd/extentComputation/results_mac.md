@@ -10,69 +10,81 @@
   - L3 Unified 3145K (x1)
 
 ##### Benchmark Results
+### Results from my 2015 MBP
 
-|Name                                                      | Time              | CPU        | Iterations |
-|:---------------------------------------------------------|:------------------|:-----------|:-----------|
-| ComputeExtent_NumPoints_1_GrainSize_1                    |       140 ns      |     139 ns |   4544038 | 
-| ComputeExtent_NumPoints_1_GrainSize_10                   |       136 ns      |     136 ns |   4749240 |
-| ComputeExtent_NumPoints_1_GrainSize_100                  |       138 ns      |     137 ns |   4904227 |
-| ComputeExtent_NumPoints_1_GrainSize_250                  |       132 ns      |     132 ns |   4891684 |
-| ComputeExtent_NumPoints_1_GrainSize_500                  |       140 ns      |     139 ns |   5206784 |
-| ComputeExtent_NumPoints_1_GrainSize_1000                 |       141 ns      |     140 ns |   4932495 |
-| ComputeExtent_NumPoints_1_GrainSize_10000                |       142 ns      |     142 ns |   4779299 |
-| ComputeExtent_NumPoints_1_GrainSize_100000               |       142 ns      |     140 ns |   5353032 |
-| ComputeExtent_NumPoints_1_GrainSize_1000000              |       140 ns      |     139 ns |   4572772 |
-| ComputeExtent_NumPoints_10_GrainSize_1                   |      2008 ns      |    1996 ns |    356073 |
-| ComputeExtent_NumPoints_10_GrainSize_10                  |       146 ns      |     146 ns |   4467705 |
-| ComputeExtent_NumPoints_10_GrainSize_100                 |       165 ns      |     164 ns |   4019385 |
-| ComputeExtent_NumPoints_10_GrainSize_250                 |       167 ns      |     166 ns |   3967129 |
-| ComputeExtent_NumPoints_10_GrainSize_500                 |       166 ns      |     165 ns |   4041944 |
-| ComputeExtent_NumPoints_10_GrainSize_1000                |       167 ns      |     166 ns |   4236980 |
-| ComputeExtent_NumPoints_10_GrainSize_10000               |       158 ns      |     158 ns |   3887183 |
-| ComputeExtent_NumPoints_10_GrainSize_100000              |       173 ns      |     172 ns |   3937318 |
-| ComputeExtent_NumPoints_10_GrainSize_1000000             |       171 ns      |     171 ns |   4158646 |
-| ComputeExtent_NumPoints_100_GrainSize_1                  |      5997 ns      |    5911 ns |     91683 |
-| ComputeExtent_NumPoints_100_GrainSize_10                 |      3293 ns      |    3265 ns |    215985 |
-| ComputeExtent_NumPoints_100_GrainSize_100                |       454 ns      |     453 ns |   1634517 |
-| ComputeExtent_NumPoints_100_GrainSize_250                |       445 ns      |     443 ns |   1482464 |
-| ComputeExtent_NumPoints_100_GrainSize_500                |       463 ns      |     462 ns |   1448601 |
-| ComputeExtent_NumPoints_100_GrainSize_1000               |       482 ns      |     479 ns |   1397903 |
-| ComputeExtent_NumPoints_100_GrainSize_10000              |       486 ns      |     484 ns |   1361762 |
-| ComputeExtent_NumPoints_100_GrainSize_100000             |       475 ns      |     474 ns |   1310444 |
-| ComputeExtent_NumPoints_100_GrainSize_1000000            |       470 ns      |     469 ns |   1471828 |
-| ComputeExtent_NumPoints_1000_GrainSize_1                 |      9819 ns      |    9709 ns |     68529 |
-| ComputeExtent_NumPoints_1000_GrainSize_10                |      8449 ns      |    8251 ns |     80455 |
-| ComputeExtent_NumPoints_1000_GrainSize_100               |      5030 ns      |    4992 ns |    130451 |
-| ComputeExtent_NumPoints_1000_GrainSize_250               |      4092 ns      |    4076 ns |    170763 |
-| ComputeExtent_NumPoints_1000_GrainSize_500               |      4061 ns      |    4042 ns |    172358 |
-| ComputeExtent_NumPoints_1000_GrainSize_1000              |      3442 ns      |    3428 ns |    214690 |
-| ComputeExtent_NumPoints_1000_GrainSize_10000             |      3477 ns      |    3451 ns |    203063 |
-| ComputeExtent_NumPoints_1000_GrainSize_100000            |      3450 ns      |    3440 ns |    195267 |
-| ComputeExtent_NumPoints_1000_GrainSize_1000000           |      3401 ns      |    3393 ns |    198010 |
-| ComputeExtent_NumPoints_10000_GrainSize_1                |     26274 ns      |   26067 ns |     25393 |
-| ComputeExtent_NumPoints_10000_GrainSize_10               |     26032 ns      |   25788 ns |     26131 |
-| ComputeExtent_NumPoints_10000_GrainSize_100              |     23265 ns      |   23071 ns |     29241 |
-| ComputeExtent_NumPoints_10000_GrainSize_250              |     21847 ns      |   21674 ns |     30879 |
-| ComputeExtent_NumPoints_10000_GrainSize_500              |     20904 ns      |   20728 ns |     32361 |
-| ComputeExtent_NumPoints_10000_GrainSize_1000             |     20876 ns      |   20642 ns |     32587 |
-| ComputeExtent_NumPoints_10000_GrainSize_10000            |     32602 ns      |   32499 ns |     22715 |
-| ComputeExtent_NumPoints_10000_GrainSize_100000           |     33436 ns      |   33334 ns |     20483 |
-| ComputeExtent_NumPoints_10000_GrainSize_1000000          |     33023 ns      |   32933 ns |     20926 |
-| ComputeExtent_NumPoints_100000_GrainSize_1               |    168409 ns      |  166150 ns |      4021 |
-| ComputeExtent_NumPoints_100000_GrainSize_10              |    168980 ns      |  166287 ns |      3984 |
-| ComputeExtent_NumPoints_100000_GrainSize_100             |    167251 ns      |  164732 ns |      3953 |
-| ComputeExtent_NumPoints_100000_GrainSize_250             |    167353 ns      |  165501 ns |      3952 |
-| ComputeExtent_NumPoints_100000_GrainSize_500             |    167030 ns      |  164661 ns |      3922 |
-| ComputeExtent_NumPoints_100000_GrainSize_1000            |    166280 ns      |  163773 ns |      4023 |
-| ComputeExtent_NumPoints_100000_GrainSize_10000           |    170814 ns      |  167932 ns |      3916 |
-| ComputeExtent_NumPoints_100000_GrainSize_100000          |    317553 ns      |  316001 ns |      2300 |
-| ComputeExtent_NumPoints_100000_GrainSize_1000000         |    326245 ns      |  325137 ns |      2117 |
-| ComputeExtent_NumPoints_1000000_GrainSize_1              |   1656578 ns      | 1558778 ns |       465 |
-| ComputeExtent_NumPoints_1000000_GrainSize_10             |   1664566 ns      | 1508866 ns |       454 |
-| ComputeExtent_NumPoints_1000000_GrainSize_100            |   1754476 ns      | 1617961 ns |       466 |
-| ComputeExtent_NumPoints_1000000_GrainSize_250            |   1673843 ns      | 1535036 ns |       446 |
-| ComputeExtent_NumPoints_1000000_GrainSize_500            |   1654872 ns      | 1561768 ns |       440 |
-| ComputeExtent_NumPoints_1000000_GrainSize_1000           |   1707853 ns      | 1603267 ns |       427 |
-| ComputeExtent_NumPoints_1000000_GrainSize_10000          |   1658786 ns      | 1579738 ns |       443 |
-| ComputeExtent_NumPoints_1000000_GrainSize_100000         |   1743178 ns      | 1565792 ns |       448 |
-| ComputeExtent_NumPoints_1000000_GrainSize_1000000        |   3580305 ns      | 3560778 ns |       212 |
+#### Machine Info
+- TBB Version 2017 Update 2
+- Run on (4 X 2700 MHz CPU s)
+- CPU Caches:
+  - L1 Data 32K (x2)
+  - L1 Instruction 32K (x2)
+  - L2 Unified 262K (x2)
+  - L3 Unified 3145K (x1)
+
+##### Benchmark Results
+
+| Name                                             | Time           | CPU      | Iterations|
+|:-------------------------------------------------|:---------------|:---------|:-----------|
+| ComputeExtent_NumPoints_1_GrainSize_1                    360 ns |       357 ns |   1971492 | 
+| ComputeExtent_NumPoints_1_GrainSize_10                   136 ns |       134 ns |   5042501 |
+| ComputeExtent_NumPoints_1_GrainSize_100                  149 ns |       148 ns |   4701678 |
+| ComputeExtent_NumPoints_1_GrainSize_250                  142 ns |       141 ns |   4676081 |
+| ComputeExtent_NumPoints_1_GrainSize_500                  138 ns |       137 ns |   4968838 |
+| ComputeExtent_NumPoints_1_GrainSize_1000                 136 ns |       135 ns |   5257939 |
+| ComputeExtent_NumPoints_1_GrainSize_10000                143 ns |       142 ns |   4605324 |
+| ComputeExtent_NumPoints_1_GrainSize_100000               154 ns |       150 ns |   4564334 |
+| ComputeExtent_NumPoints_1_GrainSize_1000000              145 ns |       144 ns |   5033002 |
+| ComputeExtent_NumPoints_10_GrainSize_1                  2209 ns |      2188 ns |    306176 |
+| ComputeExtent_NumPoints_10_GrainSize_10                  413 ns |       408 ns |   1709769 |
+| ComputeExtent_NumPoints_10_GrainSize_100                 162 ns |       160 ns |   4136774 |
+| ComputeExtent_NumPoints_10_GrainSize_250                 182 ns |       179 ns |   4055174 |
+| ComputeExtent_NumPoints_10_GrainSize_500                 178 ns |       176 ns |   3763319 |
+| ComputeExtent_NumPoints_10_GrainSize_1000                175 ns |       174 ns |   4068656 |
+| ComputeExtent_NumPoints_10_GrainSize_10000               177 ns |       176 ns |   4091390 |
+| ComputeExtent_NumPoints_10_GrainSize_100000              177 ns |       175 ns |   3954735 |
+| ComputeExtent_NumPoints_10_GrainSize_1000000             168 ns |       167 ns |   3790627 |
+| ComputeExtent_NumPoints_100_GrainSize_1                 6297 ns |      6150 ns |     85092 |
+| ComputeExtent_NumPoints_100_GrainSize_10                3219 ns |      3190 ns |    217134 |
+| ComputeExtent_NumPoints_100_GrainSize_100                851 ns |       844 ns |    833442 |
+| ComputeExtent_NumPoints_100_GrainSize_250                492 ns |       487 ns |   1572023 |
+| ComputeExtent_NumPoints_100_GrainSize_500                495 ns |       492 ns |   1362530 |
+| ComputeExtent_NumPoints_100_GrainSize_1000               492 ns |       489 ns |   1305702 |
+| ComputeExtent_NumPoints_100_GrainSize_10000              489 ns |       486 ns |   1297161 |
+| ComputeExtent_NumPoints_100_GrainSize_100000             496 ns |       491 ns |   1263082 |
+| ComputeExtent_NumPoints_100_GrainSize_1000000            493 ns |       490 ns |   1345999 |
+| ComputeExtent_NumPoints_1000_GrainSize_1               10377 ns |     10209 ns |     64478 |
+| ComputeExtent_NumPoints_1000_GrainSize_10               8665 ns |      8533 ns |     77218 |
+| ComputeExtent_NumPoints_1000_GrainSize_100              5174 ns |      5123 ns |    122837 |
+| ComputeExtent_NumPoints_1000_GrainSize_250              4310 ns |      4256 ns |    163067 |
+| ComputeExtent_NumPoints_1000_GrainSize_500              4260 ns |      4129 ns |    168108 |
+| ComputeExtent_NumPoints_1000_GrainSize_1000             4116 ns |      4073 ns |    167424 |
+| ComputeExtent_NumPoints_1000_GrainSize_10000            3598 ns |      3547 ns |    204160 |
+| ComputeExtent_NumPoints_1000_GrainSize_100000           4102 ns |      3935 ns |    196128 |
+| ComputeExtent_NumPoints_1000_GrainSize_1000000          3608 ns |      3552 ns |    199213 |
+| ComputeExtent_NumPoints_10000_GrainSize_1              27115 ns |     26667 ns |     23576 |
+| ComputeExtent_NumPoints_10000_GrainSize_10             28049 ns |     27526 ns |     24454 |
+| ComputeExtent_NumPoints_10000_GrainSize_100            25531 ns |     24928 ns |     27184 |
+| ComputeExtent_NumPoints_10000_GrainSize_250            24556 ns |     23928 ns |     30113 |
+| ComputeExtent_NumPoints_10000_GrainSize_500            22135 ns |     21744 ns |     31491 |
+| ComputeExtent_NumPoints_10000_GrainSize_1000           22983 ns |     22360 ns |     29873 |
+| ComputeExtent_NumPoints_10000_GrainSize_10000          26361 ns |     24958 ns |     27165 |
+| ComputeExtent_NumPoints_10000_GrainSize_100000         34252 ns |     33592 ns |     21683 |
+| ComputeExtent_NumPoints_10000_GrainSize_1000000        34080 ns |     33687 ns |     20232 |
+| ComputeExtent_NumPoints_100000_GrainSize_1            184846 ns |    177147 ns |      3746 |
+| ComputeExtent_NumPoints_100000_GrainSize_10           180728 ns |    173217 ns |      3717 |
+| ComputeExtent_NumPoints_100000_GrainSize_100          180444 ns |    173233 ns |      3749 |
+| ComputeExtent_NumPoints_100000_GrainSize_250          187912 ns |    178554 ns |      3875 |
+| ComputeExtent_NumPoints_100000_GrainSize_500          173230 ns |    167567 ns |      3540 |
+| ComputeExtent_NumPoints_100000_GrainSize_1000         185764 ns |    177560 ns |      3639 |
+| ComputeExtent_NumPoints_100000_GrainSize_10000        193366 ns |    183702 ns |      3555 |
+| ComputeExtent_NumPoints_100000_GrainSize_100000       220480 ns |    211058 ns |      3163 |
+| ComputeExtent_NumPoints_100000_GrainSize_1000000      349067 ns |    341615 ns |      2122 |
+| ComputeExtent_NumPoints_1000000_GrainSize_1          1772632 ns |   1591260 ns |       438 |
+| ComputeExtent_NumPoints_1000000_GrainSize_10         1766228 ns |   1598911 ns |       448 |
+| ComputeExtent_NumPoints_1000000_GrainSize_100        1762174 ns |   1564897 ns |       455 |
+| ComputeExtent_NumPoints_1000000_GrainSize_250        1783183 ns |   1603150 ns |       427 |
+| ComputeExtent_NumPoints_1000000_GrainSize_500        1745509 ns |   1581793 ns |       440 |
+| ComputeExtent_NumPoints_1000000_GrainSize_1000       1774318 ns |   1580630 ns |       438 |
+| ComputeExtent_NumPoints_1000000_GrainSize_10000      1793116 ns |   1631318 ns |       421 |
+| ComputeExtent_NumPoints_1000000_GrainSize_100000     1827044 ns |   1677414 ns |       415 |
+| ComputeExtent_NumPoints_1000000_GrainSize_1000000    2229294 ns |   2169966 ns |       320 |
