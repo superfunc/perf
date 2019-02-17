@@ -1,4 +1,4 @@
-Array Removal in Lua
+Lua Performance Anecdotes: Array Removal
 ======
 
 Context
