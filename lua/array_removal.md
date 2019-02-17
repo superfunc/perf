@@ -91,4 +91,5 @@ Links
   - [Scott Meyes: _CPU Caches and Why You Care_](https://www.youtube.com/watch?v=WDIkqP4JbkE)
   - [Chandler Carruth: _Efficiency with Algorithms, Performance with Data Structures_](https://www.youtube.com/watch?v=fHNmRkzxHWs)
   - [Eric Brumer, _Native Code Performance on Modern CPUs: A Changing Landscape_](https://channel9.msdn.com/Events/Build/2014/4-587)
+Designing with Performance in Mind:  
   - [Joe Duffy, _Performance Culture_](http://joeduffyblog.com/2016/04/10/performance-culture/)
