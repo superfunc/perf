@@ -1,6 +1,17 @@
 Array Removal in Lua
 ======
 
+Context
+----
+I'm working on a project in my spare time which is written in Lua, with Love2D. I'm approaching this project with performance
+considerations in mind from the onset, as I intend for this to be able to run at 60fps on less capable hardware (within reason). 
+
+Its early days, but a few patterns about the behavior of the system have started to emerge. 
+One such behavior is a need to remove many entities from the system every frame. This entity data is stored in 
+arrays, which is wonderful for the majority of the operations being done on them, but atrocious for removal (see problem statement below for _why_). 60fps leaves us with 16ms for all of our processing (1s = 1000ms, 1000ms/60 = 16.66ms), and I certainly 
+didn't want to spend it removing entities from the scene. In early testing, I was seeing 12% of that 16ms 
+being spent on removals, _surely_ we can do better.
+
 Problem Statement
 ----
 Given some array in lua, _A_ of length _N_: when we remove an element at a non-negative integer index _i_, the removal
@@ -58,10 +69,16 @@ sizes of arrays.
 
 As we can see, in smaller N, we see a non trivial win, and an even starker disparity in our favor for larger N.
 
+Lesson
+----
+I think one useful lesson I had reinforced in this exploration, was to remember to fit your solution to the _specifics_ of
+your problem. There is often context that only _you_ have, which _you_ can take advantage of.
 
 Links
 ----
-- Lua's internals:
+- Lua's:
+  - [Main Lua Site](https://www.lua.org/)
+  - [Love2D Site](https://love2d.org)
   - [Lua 5's Implementation](https://www.lua.org/doc/jucs05.pdf)
   - [SO Post Covering Array Implementation](https://stackoverflow.com/questions/29928379/how-are-lua-tables-handled-in-memory)
 - Clojure's unique vector implementation:
@@ -74,3 +91,4 @@ Links
   - [Scott Meyes: _CPU Caches and Why You Care_](https://www.youtube.com/watch?v=WDIkqP4JbkE)
   - [Chandler Carruth: _Efficiency with Algorithms, Performance with Data Structures_](https://www.youtube.com/watch?v=fHNmRkzxHWs)
   - [Eric Brumer, _Native Code Performance on Modern CPUs: A Changing Landscape_](https://channel9.msdn.com/Events/Build/2014/4-587)
+  - [Joe Duffy, _Performance Culture_](http://joeduffyblog.com/2016/04/10/performance-culture/)
