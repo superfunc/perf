@@ -54,6 +54,9 @@ I did some simple testing of this to see how the performance shakes out. Filling
 then removing elements from one using `table.remove` and the other using `prune`, I got the following results for different 
 sizes of arrays.
 
+![](lua_table_removal.png)
+
+As we can see, in smaller N, we see a non trivial win, and an even starker disparity in our favor for larger N.
 
 
 Links
