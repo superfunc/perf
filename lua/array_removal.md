@@ -14,7 +14,7 @@ being spent on removals, _surely_ we can do better.
 
 Problem Statement
 ----
-Given some array in lua, _A_ of length _N_: when we remove an element at a non-negative integer index _i_, the removal
+Given some array in lua, _A_ of length _N_: when we remove an element at an index _i_, the removal
 will cost us _K = 1 + (N - i)_ operations. This is because all of the elements to the right of our
 element _i_ need to be shifted leftwards (+1 for the removal of our element). 
 This is true of growable array implementations across most languages, such as std::vector in C++, or ArrayList in Java. 
