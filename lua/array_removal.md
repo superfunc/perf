@@ -34,7 +34,7 @@ When we have many items to remove, as mentioned above, we could wrap this up in 
 ```lua
 function prune(t, shouldPrune)
   local i = 1
-  while i < #t do
+  while i <= #t do
     if shouldPrune(t[i]) then
       remove(t, i)
     else
